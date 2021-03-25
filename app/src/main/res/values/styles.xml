@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionMenuTextColor">@color/report_menu_item_color</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppThemeNoActionbar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionMenuTextColor">@color/report_menu_item_color</item>
+    </style>
+
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/alert_dialog_text_color</item>
+        <item name="android:textColorPrimary">@color/alert_dialog_primary_color</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionMenuTextColor">@color/setting_menu_item_color</item>
+    </style>
+
+    <style name="DatePickerTheme" parent="@android:style/Widget.Material.Light.DatePicker">
+        <item name="android:datePickerStyle">@android:style/Widget.DatePicker</item>
+
+        <!--<item name="colorControlNormal">@color/date_picker_divider_color</item>
+        <item name="colorControlActivated">@color/date_picker_divider_color</item>
+        <item name="android:textColorPrimary">@color/dark_theme_text_color</item>
+        <item name="android:textSize">@dimen/dimen_20sp</item>-->
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="colorControlNormal">@color/setting_menu_item_color</item>
+    </style>
+
+
+</resources>

@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">PrismPoc</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="location_update">New Location Update</string>
+    <string name="permission_rationale">Location permission is needed for core functionality</string>
+    <string name="permission_denied_explanation">Permission was denied, but is needed for core
+        functionality.</string>
+    <string name="settings">Settings</string>
+    <string name="ok">OK</string>
+    <string name="gps_network_not_enabled">GPS not enabled</string>
+    <string name="open_location_settings">Open</string>
+    <string name="Cancel">Cancel</string>
+    <string name="gps_rationale_denied_explanation">GPS is needed for core
+        functionality. Please enable GPS.</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_dashboard">MainActivity</string>
+    <string name="title_map">Map</string>
+    <string name="title_history">History</string>
+    <string name="title_profile">Profile</string>
+    <string name="logout">Logout</string>
+    <string name="signout_alert">Are you sure you want to Signout?</string>
+    <string name="OK">OK</string>
+    <string name="shared_location">Thank you for recording your location!</string>
+    <string name="shared_location_notification">(%s)Thank you for recording your location.</string>
+</resources>
