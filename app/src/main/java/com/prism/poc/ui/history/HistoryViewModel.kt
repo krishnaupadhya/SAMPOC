@@ -2,21 +2,25 @@ package com.prism.poc.ui.history
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.prism.poc.locationhistory.LocationHistory
+import androidx.lifecycle.viewModelScope
+import com.prism.poc.db.HistoryLocation
+import com.prism.poc.db.LocationRepository
 import com.prism.poc.locationhistory.LocationHistoryUtils
+import kotlinx.coroutines.launch
 
-class HistoryViewModel : ViewModel() {
+class HistoryViewModel(private val repository: LocationRepository) : ViewModel() {
 
-     val locations = MutableLiveData<List<LocationHistory>>()
+     val locations:MutableLiveData<List<HistoryLocation>>? = MutableLiveData<List<HistoryLocation>>()
 
     fun getHistoryLocationsList() {
-        LocationHistoryUtils.getInstance()
-            .getAddressFromLocation(LocationHistoryUtils.getInstance().locationHistoryList)
+        viewModelScope.launch {
+            val history= repository.getAll()
+            history.let {
+                locations?.value=it
+            }
+        }
     }
 
-    fun setLocationHistory(locationHistoryList: List<LocationHistory>) {
-        locations.value = locationHistoryList
-    }
 
 
 }

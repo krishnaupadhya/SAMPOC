@@ -33,6 +33,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
+import kotlinx.coroutines.GlobalScope;
+
 import static com.prism.poc.DetachableClickListener.wrap;
 
 /**
@@ -40,8 +42,6 @@ import static com.prism.poc.DetachableClickListener.wrap;
  */
 public class GenericUtil {
 
-    private static long locationUpdatedTimeInMilliSeconds = 0;
-    public static boolean mIsActivityInForeGround;
 
     public static void log(String tag, String message) {
         if (!BuildConfig.BUILD_TYPE.equalsIgnoreCase(AppConstants.RELEASE)) {
@@ -99,6 +99,9 @@ public class GenericUtil {
     public static void clearDataOnLogout() {
         putInSharedPreferences(AppConstants.USER_NAME,"");
         putInSharedPreferences(AppConstants.SAVED_LOCATIONS,"");
+        putInSharedPreferences(AppConstants.LAST_KNOWN_LATITUDE,"");
+        putInSharedPreferences(AppConstants.LAST_KNOWN_LONGITUDE,"");
+        putInSharedPreferences(AppConstants.LOCATION_UPDATED_TIME,"");
     }
 
 
@@ -150,7 +153,7 @@ public class GenericUtil {
         LatLng latLngB = new LatLng(location.getLatitude(), location.getLongitude());
         double distance = getDistanceFromLatLong(latLngA,latLngB);
         GenericUtil.log("Distance is= " + distance);
-        return distance != -1 && (distance > 0 && distance < AppConstants.DEFAULT_LOCATION_RADIUS) ;
+        return false;//distance != -1 && (distance > 0 && distance < AppConstants.DEFAULT_LOCATION_RADIUS) ;
     }
 
 

@@ -96,11 +96,10 @@ public class LocationWorker extends Worker {
                                 if (task.isSuccessful() && task.getResult() != null) {
                                     mCurrentLocation = task.getResult();
                                     GenericUtil.log("LocationWorker doWork: " + mCurrentLocation);
-                                    EventBus.getDefault().post(new LocationPostEvent(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude()));
-                                    RecordUserLocationUtil.getInstance().sendLocation(mCurrentLocation);
                                     if (!GenericUtil.isDistanceWithinRange(mCurrentLocation)) {
                                         LocationHistoryUtils.getInstance().saveLocationToLocal(mCurrentLocation);
                                     }
+                                    EventBus.getDefault().post(new LocationPostEvent(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude()));
                                     mFusedLocationClient.removeLocationUpdates(mLocationCallback);
                                 } else {
                                     GenericUtil.log("LocationWorker doWork: Failed to get location.");

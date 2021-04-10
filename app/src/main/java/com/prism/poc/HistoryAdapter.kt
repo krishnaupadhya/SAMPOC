@@ -6,9 +6,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
+import com.prism.poc.db.HistoryLocation
 import com.prism.poc.locationhistory.LocationHistory
 
-internal class HistoryAdapter(private var historyList: List<LocationHistory>) :
+internal class HistoryAdapter(private var historyList: List<HistoryLocation>) :
     RecyclerView.Adapter<HistoryAdapter.MyViewHolder>() {
 
 

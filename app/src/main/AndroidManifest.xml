@@ -61,6 +61,7 @@
 
         <service
             android:name=".UploadLocationService"
+            android:foregroundServiceType="location"
             android:exported="false" />
     </application>
 

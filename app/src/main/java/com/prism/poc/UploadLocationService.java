@@ -136,12 +136,12 @@ public class UploadLocationService extends Service implements IRecordPostLocatio
                             public void onComplete(@NonNull Task<Location> task) {
                                 if (task.isSuccessful() && task.getResult() != null) {
                                     mCurrentLocation = task.getResult();
-                                    EventBus.getDefault().post(new LocationPostEvent(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude()));
-                                    RecordUserLocationUtil.getInstance().sendLocation(mCurrentLocation);
-                                    GenericUtil.log(TAG + mCurrentLocation);
                                     if (!GenericUtil.isDistanceWithinRange(mCurrentLocation)) {
                                         LocationHistoryUtils.getInstance().saveLocationToLocal(mCurrentLocation);
                                     }
+                                    EventBus.getDefault().post(new LocationPostEvent(mCurrentLocation.getLatitude(), mCurrentLocation.getLongitude()));
+                                    GenericUtil.log(TAG + mCurrentLocation);
+
                                 } else {
                                     GenericUtil.log(TAG + "  Failed to get location.");
                                 }

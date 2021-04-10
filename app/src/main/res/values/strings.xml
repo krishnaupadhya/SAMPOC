@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PrismPoc</string>
+    <string name="app_name">SAMPoc</string>
     <string name="title_activity_maps">Map</string>
     <string name="location_update">New Location Update</string>
     <string name="permission_rationale">Location permission is needed for core functionality</string>

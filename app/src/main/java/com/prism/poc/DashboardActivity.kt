@@ -243,11 +243,10 @@ class DashboardActivity : AppCompatActivity() {
                 if (mRequestingLocationUpdates) {
                     mCurrentLocation = locationResult.lastLocation
                     mCurrentLocation?.let {
-                        EventBus.getDefault().post(LocationPostEvent(it.latitude, it.longitude))
-                        RecordUserLocationUtil.getInstance().sendLocation(mCurrentLocation)
                         if (!GenericUtil.isDistanceWithinRange(mCurrentLocation)) {
-                            LocationHistoryUtils.getInstance().saveLocationToLocal(mCurrentLocation)
+                            LocationHistoryUtils.instance?.saveLocationToLocal(mCurrentLocation)
                         }
+                        EventBus.getDefault().post(LocationPostEvent(it.latitude, it.longitude))
                     }
                     stopLocationUpdates()
                     startLocationService()
